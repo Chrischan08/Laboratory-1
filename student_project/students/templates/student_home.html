@@ -1,11 +1,26 @@
 <!DOCTYPE html>
 <html>
-<head>
-<   title>BSIT Student Portal</>
-</head>
-<body>
-    <h1>Welcome to the BSIT Student Portal</h1>
-    <p>Welcome to our Django application.</p>
-    <p>This system is developed as part of Web Systems and Technologies 1.</p>
-</body>
+  <head>
+    <title>Student Information System</title>
+  </head>
+  <body>
+    <h1>Student Information System</h1>
+    <h2>Student List</h2>
+    <table border="1">
+      <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Course</th>
+        <th>Age</th>
+      </tr>
+      {% for student in students %}
+        <tr>
+          <td>{{ student.firstname }}</td>
+          <td>{{ student.lastname }}</td>
+          <td>{{ student.course }}</td>
+          <td>{{ student.age }}</td>
+        </tr>
+      {% endfor %}
+    </table>
+  </body>
 </html>
