@@ -1,26 +1,17 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Student Information System</title>
+    <title>Student Registration</title>
   </head>
   <body>
     <h1>Student Information System</h1>
-    <h2>Student List</h2>
-    <table border="1">
-      <tr>
-        <th>First Name</th>
-        <th>Last Name</th>
-        <th>Course</th>
-        <th>Age</th>
-      </tr>
-      {% for student in students %}
-        <tr>
-          <td>{{ student.firstname }}</td>
-          <td>{{ student.lastname }}</td>
-          <td>{{ student.course }}</td>
-          <td>{{ student.age }}</td>
-        </tr>
-      {% endfor %}
-    </table>
+    <h2>Student Registration Form</h2>
+    <form method="POST">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit">
+        Submit
+      </button>
+    </form>
   </body>
 </html>
