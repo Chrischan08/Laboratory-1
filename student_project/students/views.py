@@ -29,6 +29,7 @@ def students(request):
                 course=form.cleaned_data["course"],
                 age=form.cleaned_data["age"],
             )
+            print(form.cleaned_data)
     else:
         form = StudentForm()
 
